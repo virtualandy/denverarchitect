@@ -17,3 +17,20 @@ html, body {
     padding: 5px 0;
     font-size: 14px;
 }
+
+@import url(http://fonts.googleapis.com/css?family=Norican);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+iframe { border: none; box-shadow: 0 0 8px #000 }
+.wrap { width: 900px; position: relative; margin: 0 auto }
+.center { text-align: center }
+h1 { font-family: Norican; font-size: 4em; margin: 0; text-shadow: -1px 1px 1px #000}
+p { font-family: Ubuntu; text-shadow: -1px 1px 1px #000 }
+pre { font-size: 1.1em; background-color: #fff; padding: 20px; color: #333; border-radius: 15px; box-shadow: inset 0 0 2px #333 }
+a { color: lightblue }
+cite { font-family: Norican; font-size: 1.6em; font-style: normal }
+
+#wheredat {
+    width: 100%;
+    height: 400px;
+}
