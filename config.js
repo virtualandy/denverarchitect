@@ -5,6 +5,5 @@ module.exports = [
         host: process.env.IP || "0.0.0.0"
   },
   "./plugins/denver",
-  "./plugins/language",
-  "./plugins/db"
+  "./plugins/language"
 ]

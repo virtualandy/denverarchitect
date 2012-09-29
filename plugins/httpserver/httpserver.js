@@ -5,7 +5,7 @@ module.exports = function setup(options, imports, register) {
     var app = express();
 
     app.set("views", __dirname + "/");
-    app.set("view engine", "jade");
+    app.set("view engine", "ejs");
     app.set("view options", {
         layout: false
     });
@@ -30,6 +30,6 @@ module.exports = function setup(options, imports, register) {
         }
     });
 
-    app.listen(options.port, options.IP);
-    console.log("Listening on " + options.IP + ":" + options.port);
+    app.listen(options.port, options.host);
+    console.log("Listening on " + options.host + ":" + options.port);
 };

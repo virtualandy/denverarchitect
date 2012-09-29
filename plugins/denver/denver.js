@@ -7,10 +7,10 @@ var rootOptions = {
     plugin : "denver"
 };
 
-httpserver.addStaticRoute(__dirname + "/../developer/assets");
+httpserver.addStaticRoute(__dirname + "/../denver/assets");
 
 httpserver.registerRoute("get", "/", function(req, res) {
-    res.render("../developer/templates/index.jade", rootOptions, function(err, html) {
+    res.render("../denver/templates/index.jade", rootOptions, function(err, html) {
         rootOptions.content = html;
         res.render("layout_bare.jade", rootOptions);
     });
