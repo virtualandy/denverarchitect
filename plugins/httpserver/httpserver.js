@@ -1,8 +1,9 @@
 module.exports = function setup(options, imports, register) {
     var express = require("express");
+    var app = express();
+    var server = require('http').createServer(app)
 
     // Setup the Express.js server
-    var app = express();
 
     app.set("views", __dirname + "/");
     app.set("view engine", "ejs");
@@ -26,10 +27,15 @@ module.exports = function setup(options, imports, register) {
             
             addStaticRoute : function(route) {
                 app.use(express.static(route));
+            },
+
+            getServer : function() {
+                return server;
             }
-        }
+        },
+        
     });
 
-    app.listen(options.port, options.host);
+    server.listen(options.port, options.host);
     console.log("Listening on " + options.host + ":" + options.port);
 };
