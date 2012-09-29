@@ -3,7 +3,7 @@ module.exports = function setup(options, imports, register) {
 var httpserver = imports.httpserver;
 
 var rootOptions = {
-    pageTitle : "Hello Denver",
+    pageTitle : "NodeDenver - virtualandy",
     plugin : "denver"
 };
 
