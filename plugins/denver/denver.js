@@ -18,9 +18,9 @@ var io = require("socket.io").listen(app);
 io.configure(function() {
     io.set('transports', ['xhr-polling']);
     io.set('polling duration', 10);
+    io.set("log level", 1);
 });
 
-io.set("log level", 1);
 
 io.sockets.on("connection", function(socket) {
     var id = socket.id;
@@ -28,10 +28,10 @@ io.sockets.on("connection", function(socket) {
         msg : "Hello"
     });
 
-    //io.sockets.emit("notice", {
-    //  type : "userjoin",
-    //  id : id
-    //});
+    io.sockets.emit("notice", {
+      type : "userjoin",
+      id : id
+    });
 
     socket.on("chat", function(data) {
         io.sockets.emit("chat", {
