@@ -1,0 +1,10 @@
+{
+    "name": "httpserver",
+    "version": "0.0.1",
+    "main": "httpserver.js",
+    "private": true,
+
+    "plugin": {
+        "provides": ["httpserver"]
+    }
+}

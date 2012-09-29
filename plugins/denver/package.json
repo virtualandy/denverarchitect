@@ -1,0 +1,10 @@
+{
+    "name": "denver",
+    "version": "0.0.1",
+    "main": "denver.js",
+    "private": true,
+
+    "plugin": {
+        "consumes": ["httpserver", "language"]
+    }
+}

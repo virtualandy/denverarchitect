@@ -1,0 +1,10 @@
+{
+    "name": "language",
+    "version": "0.0.1",
+    "main": "language.js",
+    "private": true,
+
+    "plugin": {
+        "provides": ["language"]
+    }
+}
