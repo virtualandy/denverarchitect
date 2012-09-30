@@ -35,16 +35,19 @@ function getAlchemy(inputText) {
     
       // Do something with data
       console.log(entities);
-      console.log("you talked about the ",entities[0].type," of ",entities[0].text);
-      
-      io.sockets.emit("newloc", { "address" : entities[0].text });
+      if (entities.length > 0) {
+        console.log("you talked about the ",entities[0].type," of ",entities[0].text);      
+        io.sockets.emit("newloc", { "address" : entities[0].text });
+      } else {
+          io.sockets.emit("badloc", { address : "Denver, Colorado" });
+      }
     });
 }
 
 io.sockets.on("connection", function(socket) {
     var id = socket.id;
     socket.emit("notice", {
-        msg : "Where did you hide the XBox?"
+        msg : "Welcome to socket and seek!"
     });
 
     io.sockets.emit("notice", {
@@ -52,18 +55,19 @@ io.sockets.on("connection", function(socket) {
       id : id
     });
 
-    socket.on("chat", function(data) {
+    socket.on("chatmap", function(data) {
         console.log("received chat data: ", data);
         io.sockets.emit("chat", {
             id: id,
             msg: data
         });
-    });
-    
-    socket.on("getalch", function(data) {
-        console.log("getalch socket received ",data);
         getAlchemy(data);
     });
+    
+    /*socket.on("getalch", function(data) {
+        console.log("getalch socket received ",data);
+        getAlchemy(data);
+    });*/
 });
 
 register(null, {});
